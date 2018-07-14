@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 14, 2018 at 01:17 PM
+-- Generation Time: Jul 14, 2018 at 09:49 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -58,6 +58,53 @@ CREATE TABLE `company` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `disability`
+--
+
+CREATE TABLE `disability` (
+  `disabilities` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `disability`
+--
+
+INSERT INTO `disability` (`disabilities`) VALUES
+('deaf'),
+('dumb'),
+('blind'),
+('handicapped');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jobs`
+--
+
+CREATE TABLE `jobs` (
+  `jobprofile` varchar(1000) NOT NULL,
+  `vacancies` int(225) NOT NULL,
+  `skillset` varchar(1000) NOT NULL,
+  `disabilities` varchar(1000) NOT NULL,
+  `cutoff` int(225) NOT NULL,
+  `Sector` varchar(1000) NOT NULL,
+  `company` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `jobs`
+--
+
+INSERT INTO `jobs` (`jobprofile`, `vacancies`, `skillset`, `disabilities`, `cutoff`, `Sector`, `company`) VALUES
+('IT Fresher', 10, 'c,java,dotnet', 'handikapped , dumb ', 40, '', 'jpmc'),
+('IT Manager', 5, 'deaf,dumb,', 'deaf,dumb,', 70, '', 'jpmc'),
+('IT Manager', 5, 'deaf,dumb,', 'deaf,dumb,', 70, '', 'jpmc'),
+('IT Manager', 5, 'deaf,dumb,', 'deaf,dumb,', 70, '', 'jpmc'),
+('', 0, '', '', 0, '', 'jpmc');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `qbank`
 --
 
@@ -67,8 +114,53 @@ CREATE TABLE `qbank` (
   `opt1` varchar(225) NOT NULL,
   `opt2` varchar(225) NOT NULL,
   `opt3` varchar(225) NOT NULL,
-  `opt4` varchar(225) NOT NULL
+  `opt4` varchar(225) NOT NULL,
+  `answer` varchar(225) NOT NULL,
+  `level` int(225) NOT NULL,
+  `sector` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `qbank`
+--
+
+INSERT INTO `qbank` (`qno`, `que`, `opt1`, `opt2`, `opt3`, `opt4`, `answer`, `level`, `sector`) VALUES
+(22, 'what is your name?', 'nikki', 'sam', 'aditya', 'manisha', '2', 1, 'retail'),
+(23, 'what is your name?', 'nikki', 'sam', 'aditya', 'manisha', '2', 1, 'retail');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `results`
+--
+
+CREATE TABLE `results` (
+  `sno` int(225) NOT NULL,
+  `mockresult` int(225) NOT NULL,
+  `finalresult` int(225) NOT NULL,
+  `username` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sectors`
+--
+
+CREATE TABLE `sectors` (
+  `jobsec` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `sectors`
+--
+
+INSERT INTO `sectors` (`jobsec`) VALUES
+('banking'),
+('retail'),
+('bpo'),
+('it'),
+('hospitality');
 
 -- --------------------------------------------------------
 
@@ -87,7 +179,8 @@ CREATE TABLE `student` (
   `phone` int(225) NOT NULL,
   `password` varchar(225) NOT NULL,
   `sno` int(225) NOT NULL,
-  `refercol` varchar(225) NOT NULL
+  `refercol` varchar(225) NOT NULL,
+  `result` int(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
