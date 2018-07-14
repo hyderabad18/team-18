@@ -9,19 +9,19 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$checkbox1=$_POST['disabilities'];  
-$chk="";  
-foreach($checkbox1 as $chk1)  
-   {  
-      $chk .= $chk1.",";  
-   }  
-$sql = "INSERT INTO college(username,age,email,university,education,passedout,disabilities,phone,password,refercol)
-VALUES ('$_POST[student]','$_POST[age]','$_POST[studentemail]','$_POST[college]','$_POST[education]','$_POST[passout]','$chk','$_POST[phone]','$_POST[password]','$_POST[refercol]')";
+$colname=$_POST['colname'];
+$name=$_POST['ccname'];
+$phone=$_POST['phone'];
+$email=$_POST['email'];
+$address=$_POST['address'];
+$password=$_POST['password']; 
  
-if (mysqli_query($conn, $sql)) {
+$Createsql = "INSERT INTO college(colname, ccname, phone,email,address,password) VALUES ('$colname' , '$name' , '$phone', '$email', '$address', '$password')";
+$res = mysqli_query($conn, $Createsql);
+if ($res) {
     echo "New record created successfully";
 } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    echo "Error: " . $Createsql . "<br>" . mysqli_error($conn);
 }
 mysqli_close($conn);
 ?>
