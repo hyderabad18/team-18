@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+
+ <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Performance</title>
+
+        <!-- CSS -->
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+        
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="tablestyle.css">
+
+
+
+
+</head>
+<body>
+<h1>Your Performance </h1>
+
+  <div class="container-fluid">
+  
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel-body">
+                <table class="table table-hover table-bordered">
+  <thead id="resulttable"class="thead-dark">
+    <tr>
+      <th scope="col">Test </th>
+      <th scope="col">Your Score</th>
+      <th scope="col">Total Score</th>
+      <th scope="col">Status </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      
+      <td id="1">60</td>
+      <td>100</td>
+      <td>Attempted</td>
+
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <
+      <td id="2">49</td>
+      <td>100</td>
+      <td>Attempted</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <
+      <td id="3">38</td>
+      <td>100</td>
+      <td>Attempted</td>
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      
+      <td id="4">58</td>
+      <td>100</td>
+      <td>Attempted</td>
+    </tr>
+    <tr>
+      <th scope="row">5</th>
+      
+      <td id="5">66</td>
+      <td>100</td>
+      <td>Attempted</td>
+    </tr>
+    <tr>
+      <th scope="row">6</th>
+     
+      <td id="6">80</td>
+      <td>100</td>
+      <td>Attempted</td>
+    </tr>
+    <tr>
+      <th scope="row">7</th>
+    
+      <td id="7">73</td>
+      <td>100</td>
+      <td>Attempted</td>
+    </tr>
+    <tr>
+      <th scope="row">8</th>
+      
+      <td id="8">48</td>
+      <td>100</td>
+      <td>Attempted</td>
+    </tr>
+    <tr>
+      <th scope="row">9</th>
+     
+      <td id="9">88</td>
+      <td>100</td>
+      <td>Attempted</td>
+    </tr>
+    <tr>
+      <th scope="row">10</th>
+      
+      <td id="10">38</td>
+      <td>100</td>
+      <td>Attempted</td>
+    </tr>
+    
+   <!--  <input type ="button" onclick="average()"value="average">
+    <input type="text" id ="avg">
+     -->   
+   
+  </tbody>
+</table>
+<input type ="button" class="btn" onclick="average()" value="average">
+  
+    <input type="text" id ="avg">
+
+    <script type="text/javascript">
+  function average(){
+       
+var table = document.getElementById('resulttable'),
+  rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr'),
+  footer = table.getElementsByTagName('tfoot')[0];
+
+// for each column that must be treated
+for(var i=2; i<11; i++){
+  var sum = numOfValues = 0;
+  // add each row's value
+  for(numOfValues=0, l=rows.length; numOfValues<l; numOfValues++){
+    sum += parseFloat(
+        rows[numOfValues].getElementsByTagName('td')[i]
+          .getElementsByTagName('center')[0]
+          .innerHTML
+      );
+  }
+
+
+    </script> 
+</div>
+ </div>
+</div>
+</div>
+
+
+</body>
+</html
+
+
