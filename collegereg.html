@@ -1,80 +1,80 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<title>college reg form</title>
 </head>
 <script>
-	function validateForm() {
-    var x = document.forms["comreg"]["colname"].value;
+function validateForm() {
+    var x = document.forms["colreg"]["colname"].value;
     if (x == "") {
         alert("Collegename must be filled out");
-        //x.focus();
         return false;
     }
     else if(x.length>40)
     {
     	 alert("Collegename is too long");
-    	 //x.focus();
     	 return false;
     }
-    var x = document.forms["comreg"]["ccname"].value;
+    var x = document.forms["colreg"]["ccname"].value;
     if (x == "") {
         alert("coordinator name must be filled out");
-        //x.focus();
         return false;
     }
-    var x = document.forms["comreg"]["cemail"].value;
+    var x = document.forms["colreg"]["email"].value;
     if (x == "") {
         alert("Email Id must be filled out");
-        //x.focus();
         return false;
     }
     else if(x.length<10)
     {
     	 alert("Provide proper email id");
-    	 //x.focus();
     	 return false;
     }
-    var x = document.forms["comreg"]["cphone"].value;
+    var x = document.forms["colreg"]["phone"].value;
     if (x == "") {
         alert("phone no. must be filled out");
+		return false;
+		}
 	else if(x.length>10)
+	{
 	alert("enter valid phone number");
-        //x.focus();
+       
         return false;
-    }
-	 var x = document.forms["comreg"]["caddress"].value;
+		}
+	 var x = document.forms["colreg"]["caddress"].value;
     if (x == "") {
         alert("Address must be filled out");
-        //x.focus();
+       
         return false;
     }
      
-    var x = document.forms["comreg"]["cpassword"].value;
+    var x = document.forms["colreg"]["password"].value;
     if (x == "") {
         alert("Password must be filled out");
-        //x.focus();
+        
         return false;
     }
     else if(x.length<6 || x.length>10)
     {
     	 alert("Password must consists of 6 to 10 letters");
-    	 //x.focus();
+
     	 return false;
     }
-    var x = document.forms["comreg"]["cconfirmpassword"].value;
+    var x = document.forms["colreg"]["confirmpassword"].value;
     if (x == "") {
         alert("Confirm Password must be filled out");
-        //x.focus();
+        
         return false;
     }
     if (document.getElementById('cpassword').value !=
-    document.getElementById('cconfirmpassword').value)
+    document.getElementById('confirmpassword').value)
     {
     	alert("Password and confirm password must match");
     	return false;
     }
-    return true;
+    
 
+return true;
 }
 </script>
 <div style="background-color:#4d4dff;color:white;padding:20px;">
@@ -84,38 +84,38 @@
 <br>
 <br>
 <body style="text-align:center;background-image:url('g.jpg');font-size:20px">
-	<form name="comreg" action="company.php" onsubmit="return validateForm()" method="POST"  >
+	<form name="colreg" action="college.php" onsubmit="return validateForm()" method="POST">
 	College Name:
-	 <input type="text" name="colname" ><br>
+	 <input type="text" name="colname" id="colname" ><br>
 	 <br>
 	 <br>
 	Coordinator name:
-	 <input type="text" name ="ccname" ><br>
+	 <input type="text" name ="ccname" id ="ccname"><br>
 	 <br>
 	 <br>
 	phone:
-	 <input type="text" name ="cphone" ><br>
+	 <input type="text" name ="phone" id ="phone"><br>
 	 <br>
 	 <br>
 	Email id: 
-	 <input type="text" name ="cemail" ><br>
+	 <input type="text" name ="email" id ="email"><br>
 	 <br>
 	 <br>
 	Address:
-	 <input type="text" name="caddress" ><br>
+	 <input type="text" name="address" id="address"><br>
 	 <br>
 	 <br>
 	Password:
-	 <input type="text" name="cpassword" ><br>
+	 <input type="text" name="password" id="password"><br>
 	 <br>
 	 <br>
 	Confirm Password:
-	 <input type="text" name="cconfirmpassword" ><br>
+	 <input type="text" name="confirmpassword" id="confirmpassword"><br>
 	 <br>
 	 <br>
 	
 	 <input type="submit" name="submit" value="submit">
-
+	</form>
 </body>
 
 </html>
