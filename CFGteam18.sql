@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 14, 2018 at 01:17 PM
+-- Generation Time: Jul 14, 2018 at 02:32 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -67,7 +67,10 @@ CREATE TABLE `qbank` (
   `opt1` varchar(225) NOT NULL,
   `opt2` varchar(225) NOT NULL,
   `opt3` varchar(225) NOT NULL,
-  `opt4` varchar(225) NOT NULL
+  `opt4` varchar(225) NOT NULL,
+  `answer` varchar(225) NOT NULL,
+  `level` int(225) NOT NULL,
+  `sector` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
