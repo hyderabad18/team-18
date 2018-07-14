@@ -1,0 +1,122 @@
+<html>
+<head>
+	<title>college reg form</title>
+</head>
+<script>
+	function validateForm() {
+    var x = document.forms["colreg"]["colname"].value;
+    if (x == "") {
+        alert("Collegename must be filled out");
+        //x.focus();
+        return false;
+    }
+    else if(x.length>40)
+    {
+    	 alert("Collegename is too long");
+    	 //x.focus();
+    	 return false;
+    }
+    var x = document.forms["colreg"]["ccname"].value;
+    if (x == "") {
+        alert("coordinator name must be filled out");
+        //x.focus();
+        return false;
+    }
+    var x = document.forms["colreg"]["email"].value;
+    if (x == "") {
+        alert("Email Id must be filled out");
+        //x.focus();
+        return false;
+    }
+    else if(x.length<10)
+    {
+    	 alert("Provide proper email id");
+    	 //x.focus();
+    	 return false;
+    }
+    var x = document.forms["colreg"]["phone"].value;
+    if (x == "") {
+        alert("phone no. must be filled out");
+	else if(x.length>10)
+	alert("enter valid phone number");
+        //x.focus();
+        return false;
+    }
+	 var x = document.forms["colreg"]["caddress"].value;
+    if (x == "") {
+        alert("Address must be filled out");
+        //x.focus();
+        return false;
+    }
+     
+    var x = document.forms["colreg"]["password"].value;
+    if (x == "") {
+        alert("Password must be filled out");
+        //x.focus();
+        return false;
+    }
+    else if(x.length<6 || x.length>10)
+    {
+    	 alert("Password must consists of 6 to 10 letters");
+    	 //x.focus();
+    	 return false;
+    }
+    var x = document.forms["colreg"]["confirmpassword"].value;
+    if (x == "") {
+        alert("Confirm Password must be filled out");
+        //x.focus();
+        return false;
+    }
+    if (document.getElementById('cpassword').value !=
+    document.getElementById('confirmpassword').value)
+    {
+    	alert("Password and confirm password must match");
+    	return false;
+    }
+    return true;
+	}
+
+}
+</script>
+<div style="background-color:#4d4dff;color:white;padding:20px;">
+
+	<h2>Company registration form </h2>
+</div>
+<br>
+<br>
+<body style="text-align:center;background-image:url('g.jpg');font-size:20px">
+	<form name="colreg" action="college.php" onsubmit="return validateForm()" method="POST"  >
+	College Name:
+	 <input type="text" name="colname" ><br>
+	 <br>
+	 <br>
+	Coordinator name:
+	 <input type="text" name ="ccname" ><br>
+	 <br>
+	 <br>
+	phone:
+	 <input type="text" name ="phone" ><br>
+	 <br>
+	 <br>
+	Email id: 
+	 <input type="text" name ="email" ><br>
+	 <br>
+	 <br>
+	Address:
+	 <input type="text" name="address" ><br>
+	 <br>
+	 <br>
+	Password:
+	 <input type="text" name="password" ><br>
+	 <br>
+	 <br>
+	Confirm Password:
+	 <input type="text" name="confirmpassword" ><br>
+	 <br>
+	 <br>
+	
+	 <input type="submit" name="submit" value="submit">
+
+</body>
+
+</html>
