@@ -48,7 +48,7 @@ body
 .loginbox
 {
 position: absolute;
-top: 70%;
+top: 50%;
 left: 50%;
 transform: translate(-50%,-50%);
 border-radius: 15px;
@@ -57,6 +57,7 @@ height: 480px;
 padding: 80px 40px;
 box-sizing: border-box;
 background: rgba(0,0,0,.5);
+
 }
 .loginbox p
 {
@@ -69,7 +70,7 @@ color: #fff;
 {
 width: 100%;
 margin-bottom: 20px;
-}
+  }
 .loginbox input[type="text"],
 .loginbox input[type="password"]
 {
@@ -105,7 +106,7 @@ p
 color: red;
 }
 h1{
-    text-align: center;
+text-align: center;
 color: red;
 margin: 0;
 padding: 0 0 20px;
@@ -119,7 +120,7 @@ font-size: 16px;
 .logo
 {
 width: 100px;
-height: 100px;
+height: 50px;
 border-radius: 50%;
 overflow: hidden;
 position: absolute;
@@ -134,10 +135,12 @@ left: calc(50% - 50px);
 <img src="logo.png" height="100" width="100" class="logo">
 <form method="post" action="login_company.php">
 <h1>LOGIN</h1>
-<p>username</p><input type="text" name="Username"  id="Username" placeholder="......" >
-<p>password</p><input type="password" name="Password" id="Password" placeholder="......" ><br><br>
+
+<p>Username</p><input type="text" name="Username"  id="Username" placeholder="......" >
+<p>Password</p><input type="password" name="Password" id="Password" placeholder="......" ><br><br>
 <input type="submit" value="login"  name='submit'> <br>
-<a href="companyform.html">SIGN UP!</a>
+
+<a href="compreg.html" style="text-align: center;">SIGN UP!</a>
 </form>
 
 </div>

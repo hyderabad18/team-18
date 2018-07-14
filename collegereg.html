@@ -78,45 +78,63 @@ function validateForm() {
 return true;
 }
 </script>
-<div style="background-color:#4d4dff;color:white;padding:20px;">
 
-	<h2>Company registration form </h2>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Registration  </title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="registrationstyle.css">
+</head>
+<body>
+
+<div class="col-sm-5 form-box">
+ <div class="form-top">
+<div class="form-top-left">
+<h1><strong>College Registration </strong></h1>
+                                
 </div>
-<br>
-<br>
-<body style="text-align:center;background-image:url('g.jpg');font-size:20px">
-	<form name="colreg" action="college.php" onsubmit="return validateForm()" method="POST">
-	College Name:
-	 <input type="text" name="colname" id="colname" ><br>
-	 <br>
-	 <br>
-	Coordinator name:
-	 <input type="text" name ="ccname" id ="ccname"><br>
-	 <br>
-	 <br>
-	phone:
-	 <input type="text" name ="phone" id ="phone"><br>
-	 <br>
-	 <br>
-	Email id: 
-	 <input type="text" name ="email" id ="email"><br>
-	 <br>
-	 <br>
-	Address:
-	 <input type="text" name="address" id="address"><br>
-	 <br>
-	 <br>
-	Password:
-	 <input type="text" name="password" id="password"><br>
-	 <br>
-	 <br>
-	Confirm Password:
-	 <input type="text" name="confirmpassword" id="confirmpassword"><br>
-	 <br>
-	 <br>
-	
-	 <input type="submit" name="submit" value="submit">
-	</form>
-</body>
+<div class="form-top-right">
+ <i class="fa fa-pencil"></i>
+  </div>
+</div>
+<div class="form-bottom">
 
+<body>
+    <!-- <div /> -->
+       
+    <form  name="companyreg" action="login_college.php" onsubmit="return validateForm()" method="POST">
+         <div class="col-sm-6">College Name:</div><input type="text" name="colname" id="colname" > <br>
+        <br>
+        
+        <div class="col-sm-6">Coordinator name:</div><input type="text" name ="ccname" class="defaultTextBox advancedSearchTextBox"  id ="ccname"><br>
+        <br>
+        
+        <div class="col-sm-6">phone:</div> <input type="text" name ="phone" id ="phone" class="defaultTextBox advancedSearchTextBox"><br>
+        <br>
+        
+        <div class="col-sm-6">email: </div><input type="text" name="email" class="defaultTextBox advancedSearchTextBox" id="email"> <br>
+        <br>
+        
+        <div class="col-sm-6">address:</div> <input type="text" name="address" class="defaultTextBox advancedSearchTextBox"  id="address"> <br>
+        <br>
+        
+        <div class="col-sm-6">password:</div> <input type="password" name="password" class="defaultTextBox advancedSearchTextBox" id="password"> <br>
+        <br>
+        
+        <div class="col-sm-6">confirm password:</div> <input type="password" class="defaultTextBox advancedSearchTextBox"  name="confirm password" id="confirm password"> <br>
+        <br>
+        
+       
+         <button type="submit" class="btn">Sign me up!</button>
+
+    </form>
+<!-- </div> -->
+</body>
 </html>

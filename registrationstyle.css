@@ -116,7 +116,7 @@ img { max-width: 100%; }
     border-color: #19b9e7;
 }
 
-nput[type="text"], 
+input[type="text"], 
 textarea, 
 textarea.form-control {
     height: 50px;

@@ -44,7 +44,7 @@ body
 }
 .loginbox
 {
-	position: absolute;
+position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-50%,-50%);
@@ -54,6 +54,7 @@ height: 480px;
 padding: 80px 40px;
 box-sizing: border-box;
 background: rgba(0,0,0,.5);
+
 }
 .loginbox p
 {
@@ -66,7 +67,7 @@ color: #fff;
 {
 width: 100%;
 margin-bottom: 20px;
-}
+  }
 .loginbox input[type="text"],
 .loginbox input[type="password"]
 {
@@ -102,7 +103,7 @@ p
 color: red;
 }
 h1{
-    text-align: center;
+text-align: center;
 color: red;
 margin: 0;
 padding: 0 0 20px;
@@ -116,7 +117,7 @@ font-size: 16px;
 .logo
 {
 width: 100px;
-height: 100px;
+height: 50px;
 border-radius: 50%;
 overflow: hidden;
 position: absolute;

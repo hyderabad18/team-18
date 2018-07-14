@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Company Registration form</title>
+	<title>Company Registration form</title>
 </head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script>
 function validateForm() {
     var x = document.forms["companyreg"]["comname"].value;
     if (x == "") {
         alert("Company name must be filled out");
     else
-        $comname=x;
+    	$comname=x;
        
     }
     
@@ -19,16 +17,16 @@ function validateForm() {
     if (x == "") {
         alert("Name must be filled out");
     else 
-        $name=x; 
+    	$name=x; 
     }
      
     var x = document.forms["companyreg"]["address"].value;
     if (x == "") {
         alert("address must be filled out");
     else 
-        $name=x; 
+    	$name=x; 
     }
-    
+	
      var x = document.forms["companyreg"]["refercol"].value;
     if (x == "") {
         alert("refercol must be filled out");
@@ -42,22 +40,22 @@ function validateForm() {
     }
     else if(x.length<10)
     {
-         alert("Provide proper email id");
-        
+    	 alert("Provide proper email id");
+    	
     }
      else
-        $email=x;
-    var x = document.forms["companyreg"]["phone"].value;
+    	$email=x;
+	var x = document.forms["companyreg"]["phone"].value;
     if (x == "") {
         alert("Email Id must be filled out");        
     }
     else if(x.length!=10)
     {
-         alert("Provide valid mobie number");
-        
+    	 alert("Provide valid mobie number");
+    	
     }
      else
-        $email=x;
+    	$email=x;
   
    
     var x = document.forms["companyreg"]["password"].value;
@@ -67,11 +65,11 @@ function validateForm() {
     }
     else if(x.length<6 || x.length>10)
     {
-         alert("Password must consists of 6 to 10 letters");
-         
+    	 alert("Password must consists of 6 to 10 letters");
+    	 
     }
     else
-        $password=x;
+    	$password=x;
     var x = document.forms["companyreg"]["confirmpassword"].value;
     if (x == "") {
         alert("Confirm Password must be filled out");
@@ -80,8 +78,8 @@ function validateForm() {
     if (document.getElementById('password').value !=
     document.getElementById('confirmpassword').value)
     {
-        alert("Password and confirm password must match");
-        return false;
+    	alert("Password and confirm password must match");
+    	return false;
     }
     return true;
 }
@@ -117,34 +115,36 @@ function validateForm() {
 <div class="form-bottom">
 
 <body>
-    <form  name="companyreg" action="compreg.php" onsubmit="return validateForm()" method="POST">
-        Company name: <input type="text" name="comname" id="comname"> <br>
+    <!-- <div /> -->
+       
+	<form  name="companyreg" action="login_company.php" onsubmit="return validateForm()" method="POST">
+		 <div class="col-sm-6">company name: </div><input type="text" name="comname" id="comname"> <br>
         <br>
         
-        Coordinator name: <input type="text" class="defaultTextBox advancedSearchTextBox" name="name" id="name"> <br>
+		<div class="col-sm-6">coordinator name: </div><input type="text" class="defaultTextBox advancedSearchTextBox" name="name" id="name"> <br>
         <br>
         
-        Phone: <input type="text" name="phone" class="defaultTextBox advancedSearchTextBox" id="phone"> <br>
+		<div class="col-sm-6">phone: </div><input type="text" name="phone" class="defaultTextBox advancedSearchTextBox" id="phone"> <br>
         <br>
         
-        Email: <input type="text" name="email" class="defaultTextBox advancedSearchTextBox" id="email"> <br>
+		<div class="col-sm-6">email: </div><input type="text" name="email" class="defaultTextBox advancedSearchTextBox" id="email"> <br>
         <br>
         
-        Address: <input type="text" name="address" class="defaultTextBox advancedSearchTextBox"  id="address"> <br>
+		<div class="col-sm-6">address:</div> <input type="text" name="address" class="defaultTextBox advancedSearchTextBox"  id="address"> <br>
         <br>
         
-        Password: <input type="password" name="password" class="defaultTextBox advancedSearchTextBox" id="password"> <br>
+		<div class="col-sm-6">password:</div> <input type="password" name="password" class="defaultTextBox advancedSearchTextBox" id="password"> <br>
         <br>
         
-        Confirm Password: <input type="password" class="defaultTextBox advancedSearchTextBox"  name="confirm password" id="confirm password"> <br>
+		<div class="col-sm-6">confirm password:</div> <input type="password" class="defaultTextBox advancedSearchTextBox"  name="confirm password" id="confirm password"> <br>
         <br>
         
-        Refer : <input type="text" name="refercol" class="defaultTextBox advancedSearchTextBox"  id="refercol"> <br>
+		<div class="col-sm-6">Refer :</div> <input type="text" name="refercol" class="defaultTextBox advancedSearchTextBox"  id="refercol"> <br>
         <br>
         
-         <button type="submit" class="btn">Sign me up!</button>
+		 <button type="submit" class="btn">Sign me up!</button>
 
-    </form>
-
+	</form>
+<!-- </div> -->
 </body>
 </html>

@@ -84,40 +84,66 @@ alert("Please select an education");
 
 }
 </script>
+<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Registration  </title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="registrationstyle.css">
 </head>
+<body>
+<div class="col-sm-5 form-box">
+ <div class="form-top">
+<div class="form-top-left">
+<h1><strong>Student Registration </strong></h1>
+                                
+</div>
+<div class="form-top-right">
+ <i class="fa fa-pencil"></i>
+  </div>
+</div>
+<div class="form-bottom">
+
 <form name="registration" action="registration.php" onsubmit="return validateForm()" method="POST"  >
-User Name:
+<div class="col-sm-6">User Name:</div>
   <input type="text" name="student" id="student" value="">
   <br>
   <br>
-Age:
+<div class="col-sm-6">Age:</div>
   <input type="text" name="age" id="age" value="">
   <br>
   <br>
-  Phone NO:
+ <div class="col-sm-6"> Phone NO:</div>
   <input type="text" name="phone" id="phone" value="">
   <br>
   <br>
- Email Id:
+ <div class="col-sm-6">Email Id:</div>
   <input type="Email" name="studentemail" id="studentemail" value="">
   <br>
   <br>
-  University Name:
+  <div class="col-sm-6">University Name:</div>
   <?php
+  // require 'config.php';
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "cfgteam18";
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$connect = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
-if (!$conn) {
+if (!$connect) {
     die("Connection failed: " . mysqli_connect_error());
 }
   $query = "SELECT colname FROM college";
-$result1 = mysqli_query($conn, $query);?>
-  <select name="college" id="college">
+$result1 = mysqli_query($connect, $query);?>
+  <select name="college" id="college" >
             <?php while($row1 = mysqli_fetch_array($result1)):;?>
 
             <option value="<?php echo $row1[0];?>"><?php echo $row1[0];?></option>
@@ -128,7 +154,7 @@ $result1 = mysqli_query($conn, $query);?>
 </select>
   <br>
   <br>
-  Present Education:
+  <div class="col-sm-6">Present Education:</div>
   <select name="education" id="education">
   <option value="btech">B.Tech</option>
   <option value="be">BE</option>
@@ -140,26 +166,26 @@ $result1 = mysqli_query($conn, $query);?>
 </select>
   <br>
   <br>
-  Passed Out:
+ <div class="col-sm-6"> Passed Out:</div>
   <input type="text" name="passout" id="passout" value="">
   <br>
   <br>
-  Disabilities:
+  <div class="col-sm-6">Disabilities:</div>
   <input type="checkbox"  name="disabilities[]" value="blind" /> Blind <br />
 	<input type="checkbox" name="disabilities[]" value="deaf" /> Deaf<br />
 	<input type="checkbox" name="disabilities[]" value="dumb" /> Dumb<br/>
 	<input type="checkbox" name="disabilities[]" value="handikapped" />Handikapped<br/>
 	<br>
 	<br>
-  Refer Colleges:
+  <div class="col-sm-6">Refer Colleges:</div>
   <input type="text" name="refercol" id="refercol" value="">
   <br>
   <br>
-  Password:
+  <div class="col-sm-6">Password:</div>
   <input type="password" name="password" id="password" value="">
   <br>
   <br>
-  Confirm Password:
+  <div class="col-sm-6">Confirm Password:</div>
   <input type="password" name="confirmpassword" id="confirmpassword" value="">
   <br>
   <br>
