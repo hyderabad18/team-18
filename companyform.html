@@ -8,64 +8,62 @@ function validateForm() {
     var x = document.forms["companyreg"]["comname"].value;
     if (x == "") {
         alert("Company name must be filled out");
-    else
-    	$comname=x;
-       
+       return false;
     }
     
     var x = document.forms["companyreg"]["name"].value;
     if (x == "") {
         alert("Name must be filled out");
-    else 
-    	$name=x; 
+		return false;
     }
      
     var x = document.forms["companyreg"]["address"].value;
     if (x == "") {
         alert("Name must be filled out");
-    else 
-    	$name=x; 
+    return false;
     }
-	
+;
     var x = document.forms["companyreg"]["email"].value;
     if (x == "") {
-        alert("Email Id must be filled out");        
+        alert("Email Id must be filled out"); 
+return false;		
     }
+	
     else if(x.length<10)
     {
     	 alert("Provide proper email id");
-    	
+    	return false;
     }
-     else
-    	$email=x;
+    
 	var x = document.forms["companyreg"]["phone"].value;
     if (x == "") {
-        alert("Email Id must be filled out");        
+        alert("Email Id must be filled out");
+	return false;        
     }
     else if(x.length!=10)
     {
     	 alert("Provide valid mobie number");
-    	
+    	return false;
     }
-     else
-    	$email=x;
   
    
     var x = document.forms["companyreg"]["password"].value;
     if (x == "") {
         alert("Password must be filled out");
+		return false;
         
     }
     else if(x.length<6 || x.length>10)
     {
     	 alert("Password must consists of 6 to 10 letters");
+		 return false;
     	 
     }
-    else
-    	$password=x;
+   
     var x = document.forms["companyreg"]["confirmpassword"].value;
     if (x == "") {
         alert("Confirm Password must be filled out");
+		return false;
         
     }
     if (document.getElementById('password').value !=
@@ -74,7 +72,13 @@ function validateForm() {
     	alert("Password and confirm password must match");
     	return false;
     }
-    return true;
+    
+	var x = document.forms["companyreg"]["refercol"].value;
+    if (x == "") {
+        alert("Refercollege must be filled out");
+		return false;
+        
+    }
 
 }
 </script>
@@ -88,7 +92,7 @@ function validateForm() {
 		address:<input type="text" name="address" id="address"> <br>
 		password:<input type="password" name="password" id="password"> <br>
 		confirm password:<input type="password" name="confirm password" id="confirm password"> <br>
-		Refer :<input type="text" name="address" id="address"> <br>
+		Refer college:<input type="text" name="refcol" id="refcol"> <br>
 		<input type="submit" value="SignUp">
 
 	</form>
