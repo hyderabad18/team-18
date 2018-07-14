@@ -47,8 +47,8 @@ body
 }
 .loginbox
 {
-	position: absolute;
-top: 50%;
+position: absolute;
+top: 70%;
 left: 50%;
 transform: translate(-50%,-50%);
 border-radius: 15px;
@@ -137,7 +137,7 @@ left: calc(50% - 50px);
 <p>username</p><input type="text" name="Username"  id="Username" placeholder="......" >
 <p>password</p><input type="password" name="Password" id="Password" placeholder="......" ><br><br>
 <input type="submit" value="login"  name='submit'> <br>
-<a href="register.php">SIGN UP!</a>
+<a href="companyform.html">SIGN UP!</a>
 </form>
 
 </div>

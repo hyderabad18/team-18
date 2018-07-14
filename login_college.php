@@ -134,7 +134,7 @@ left: calc(50% - 50px);
 <p>username</p><input type="text" name="Username"  id="Username" placeholder="......" >
 <p>password</p><input type="password" name="Password" id="Password" placeholder="......" ><br><br>
 <input type="submit" value="login" > <br>
-<a href="register.php">SIGN UP!</a>
+<a href="collegereg.html">SIGN UP!</a>
 </form>
 
 </div>
