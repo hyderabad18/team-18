@@ -39,7 +39,7 @@
 	if(!isset($_SESSION['score']))
 		$_SESSION['score']=0;
 	if(!isset($_SESSION['n']))
-		$_SESSION['n']=15;
+		$_SESSION['n']=2;
 	if(!isset($_SESSION['answ']))
 		$_SESSION['answ']=0;
 	
