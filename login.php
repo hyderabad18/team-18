@@ -5,25 +5,25 @@ if($_POST)
 $db = mysqli_connect('localhost', 'root', '', 'upload');
 //if($db)
 //{
-//  echo" connection establlished";
+//	echo" connection establlished";
 //}
 
  $Username = $_POST['Username'];
   $Password=md5($_POST['Password']);
 $query = "SELECT Username,Password FROM users WHERE Username='$Username' and Password='$Password' ";
-$result=mysqli_query($db,$query);   
+$result=mysqli_query($db,$query);	
 if(mysqli_num_rows($result))
 {
-    session_start();
-    $_SESSION['root']='true';
-    $getname=$_POST['Username'];
-    $_SESSION['user']=$getname;
-    //echo $_SESSION['user'];
-    header('location:testing.php');
+	session_start();
+	$_SESSION['root']='true';
+	$getname=$_POST['Username'];
+	$_SESSION['user']=$getname;
+	//echo $_SESSION['user'];
+	header('location:testing.php');
 }
 else
 {
-    echo 'enter correct username and password';
+	echo 'enter correct username and password';
 }
 }
 ?>
@@ -34,15 +34,15 @@ else
 <style>
 body
 {
-    margin: 0;
-    padding: 0;
-    background: url(ba.gif);
-    background-size: cover;
-    font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	background: url(ba.gif);
+	background-size: cover;
+	font-family: sans-serif;
 }
 .loginbox
 {
-    position: absolute;
+	position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-50%,-50%);
@@ -127,8 +127,7 @@ left: calc(50% - 50px);
 
 <img src="logo.png" height="100" width="100" class="logo">
 <form method="post">
-<!-- <h1>CBIT</h1> -->
-<h1>login</h1>
+<h1>CBIT</h1>
 <p>username</p><input type="text" name="Username" placeholder="......" >
 <p>password</p><input type="password" name="Password" placeholder="......" ><br><br>
 <input type="submit" value="login"> <br>
