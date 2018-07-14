@@ -14,7 +14,8 @@
 </body>
 </html>
 <?php
-
+if(isset($_POST["submit"]))
+{
 require "config.php";
   $file_name = $_POST["myfile"];
   $file = fopen($file_name,"r");
@@ -26,5 +27,5 @@ if($i>0){
 }
 $i=1;
 }
-
+}
 ?>
