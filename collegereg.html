@@ -2,6 +2,80 @@
 <head>
 	<title>college reg form</title>
 </head>
+	function validateForm() {
+    var x = document.forms["comreg"]["colname"].value;
+    if (x == "") {
+        alert("Collegename must be filled out");
+        //x.focus();
+        return false;
+    }
+    else if(x.length>40)
+    {
+    	 alert("Collegename is too long");
+    	 //x.focus();
+    	 return false;
+    }
+    var x = document.forms["comreg"]["ccname"].value;
+    if (x == "") {
+        alert("coordinator name must be filled out");
+        //x.focus();
+        return false;
+    }
+    var x = document.forms["comreg"]["cemail"].value;
+    if (x == "") {
+        alert("Email Id must be filled out");
+        //x.focus();
+        return false;
+    }
+    else if(x.length<10)
+    {
+    	 alert("Provide proper email id");
+    	 //x.focus();
+    	 return false;
+    }
+    var x = document.forms["comreg"]["cphone"].value;
+    if (x == "") {
+        alert("phone no. must be filled out");
+	else if(x.length>10)
+	alert("enter valid phone number");
+        //x.focus();
+        return false;
+    }
+	 var x = document.forms["comreg"]["caddress"].value;
+    if (x == "") {
+        alert("Address must be filled out");
+        //x.focus();
+        return false;
+    }
+     
+    var x = document.forms["comreg"]["cpassword"].value;
+    if (x == "") {
+        alert("Password must be filled out");
+        //x.focus();
+        return false;
+    }
+    else if(x.length<6 || x.length>10)
+    {
+    	 alert("Password must consists of 6 to 10 letters");
+    	 //x.focus();
+    	 return false;
+    }
+    var x = document.forms["comreg"]["cconfirmpassword"].value;
+    if (x == "") {
+        alert("Confirm Password must be filled out");
+        //x.focus();
+        return false;
+    }
+    if (document.getElementById('cpassword').value !=
+    document.getElementById('cconfirmpassword').value)
+    {
+    	alert("Password and confirm password must match");
+    	return false;
+    }
+    return true;
+
+}
+</script>
 <div style="background-color:#4d4dff;color:white;padding:20px;">
 
 	<h2>Company registration form </h2>
@@ -9,6 +83,7 @@
 <br>
 <br>
 <body style="text-align:center;background-image:url('g.jpg');font-size:20px">
+	<form name="comreg" action="company.php" onsubmit="return validateForm()" method="POST"  >
 	College Name:
 	 <input type="text" name="colname" ><br>
 	 <br>
@@ -18,19 +93,23 @@
 	 <br>
 	 <br>
 	phone:
-	 <input type="text" name ="phone" ><br>
+	 <input type="text" name ="cphone" ><br>
 	 <br>
 	 <br>
 	Email id: 
-	 <input type="text" name ="email" ><br>
+	 <input type="text" name ="cemail" ><br>
 	 <br>
 	 <br>
 	Address:
-	 <input type="text" name="address" ><br>
+	 <input type="text" name="caddress" ><br>
 	 <br>
 	 <br>
 	Password:
-	 <input type="text" name="password" ><br>
+	 <input type="text" name="cpassword" ><br>
+	 <br>
+	 <br>
+	Confirm Password:
+	 <input type="text" name="cconfirmpassword" ><br>
 	 <br>
 	 <br>
 	
