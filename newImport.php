@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-
-	<form action = "" method = "POST" enctype="multipart/form-data">
-		<p>please enter the file name: </p><input type = "text" name = "myfile"/>
-		<p>               </p><input type = "submit" name = "submit"/>
-		
-	</form>
-
-</body>
-</html>
 <?php
 if(isset($_POST["submit"]))
 {
@@ -29,3 +14,18 @@ $i=1;
 }
 }
 ?>
+
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<form action = "" method = "POST" enctype="multipart/form-data">
+		<p>please enter the file name: </p><input type = "text" name = "myfile"/>
+		<p>               </p><input type = "submit" name = "submit"/>
+		
+	</form>
+
+</body>
+</html>
