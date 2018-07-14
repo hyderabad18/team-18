@@ -1,0 +1,100 @@
+
+
+function readCSV($csvFile){
+	$file_handle = fopen($csvFile, 'r');
+	while (!feof($file_handle) ) {
+		$line_of_text[] = fgetcsv($file_handle, 1024);
+	}
+	fclose($file_handle);
+	return $line_of_text;
+}
+1
+2
+3
+4
+5
+6
+7
+8
+function readCSV($csvFile){
+	$file_handle = fopen($csvFile, 'r');
+	while (!feof($file_handle) ) {
+		$line_of_text[] = fgetcsv($file_handle, 1024);
+	}
+	fclose($file_handle);
+	return $line_of_text;
+}
+Syntax
+
+
+<?php
+$csvFile = "test.csv";
+$csv = readCSV($csvFile);
+$a = csv[0][0]; // This will get value of Column 1 & Row 1
+?>
+1
+2
+3
+4
+5
+<?php
+$csvFile = "test.csv";
+$csv = readCSV($csvFile);
+$a = csv[0][0]; // This will get value of Column 1 & Row 1
+?>
+24. CREATING A CSV FILE FROM PHP ARRAY
+
+function generateCsv($data, $delimiter = ',', $enclosure = '"') {
+   $handle = fopen('php://temp', 'r+');
+   foreach ($data as $line) {
+		   fputcsv($handle, $line, $delimiter, $enclosure);
+   }
+   rewind($handle);
+   while (!feof($handle)) {
+		   $contents .= fread($handle, 8192);
+   }
+   fclose($handle);
+   return $contents;
+}
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+function generateCsv($data, $delimiter = ',', $enclosure = '"') {
+   $handle = fopen('php://temp', 'r+');
+   foreach ($data as $line) {
+		   fputcsv($handle, $line, $delimiter, $enclosure);
+   }
+   rewind($handle);
+   while (!feof($handle)) {
+		   $contents .= fread($handle, 8192);
+   }
+   fclose($handle);
+   return $contents;
+}
+Syntax
+
+
+<?php
+$data[0] = "apple";
+$data[1] = "oranges";
+generateCsv($data, $delimiter = ',', $enclosure = '"');
+?>
+1
+2
+3
+4
+5
+<?php
+$data[0] = "apple";
+$data[1] = "oranges";
+generateCsv($data, $delimiter = ',', $enclosure = '"');
+?>
