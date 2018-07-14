@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Company Registration form</title>
+</head>
+<script>
+function validateForm() {
+    var x = document.forms["companyreg"]["comname"].value;
+    if (x == "") {
+        alert("Company name must be filled out");
+    else
+    	$comname=x;
+       
+    }
+    
+    var x = document.forms["companyreg"]["name"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+    else 
+    	$name=x; 
+    }
+     
+    var x = document.forms["companyreg"]["address"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+    else 
+    	$name=x; 
+    }
+	
+    var x = document.forms["companyreg"]["email"].value;
+    if (x == "") {
+        alert("Email Id must be filled out");        
+    }
+    else if(x.length<10)
+    {
+    	 alert("Provide proper email id");
+    	
+    }
+     else
+    	$email=x;
+	var x = document.forms["companyreg"]["phone"].value;
+    if (x == "") {
+        alert("Email Id must be filled out");        
+    }
+    else if(x.length!=10)
+    {
+    	 alert("Provide valid mobie number");
+    	
+    }
+     else
+    	$email=x;
+  
+   
+    var x = document.forms["companyreg"]["password"].value;
+    if (x == "") {
+        alert("Password must be filled out");
+        
+    }
+    else if(x.length<6 || x.length>10)
+    {
+    	 alert("Password must consists of 6 to 10 letters");
+    	 
+    }
+    else
+    	$password=x;
+    var x = document.forms["companyreg"]["confirmpassword"].value;
+    if (x == "") {
+        alert("Confirm Password must be filled out");
+        
+    }
+    if (document.getElementById('password').value !=
+    document.getElementById('confirmpassword').value)
+    {
+    	alert("Password and confirm password must match");
+    	return false;
+    }
+    return true;
+
+}
+</script>
+
+<body>
+	<form  name="companyreg" action="company.php" onsubmit="return validateForm()" method="POST">
+		company name:<input type="text" name="comname" id="comname"> <br>
+		coordinator name:<input type="text" name="name" id="name"> <br>
+		phone:<input type="text" name="phone" id="phone"> <br>
+		email:<input type="text" name="email" id="email"> <br>
+		address:<input type="text" name="address" id="address"> <br>
+		password:<input type="password" name="password" id="password"> <br>
+		confirm password:<input type="password" name="confirm password" id="confirm password"> <br>
+		Refer :<input type="text" name="address" id="address"> <br>
+		<input type="submit" value="SignUp">
+
+	</form>
+
+</body>
+</html>
