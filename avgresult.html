@@ -15,9 +15,6 @@
 
 <link rel="stylesheet" href="tablestyle.css">
 
-
-
-
 </head>
 <body>
 <h1>Your Performance </h1>
@@ -27,8 +24,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel-body">
-                <table class="table table-hover table-bordered">
-  <thead id="resulttable"class="thead-dark">
+                <table class="table table-hover table-bordered" id="table">
+  <thead class="thead-dark">
     <tr>
       <th scope="col">Test </th>
       <th scope="col">Your Score</th>
@@ -38,73 +35,73 @@
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
+      <td>1</td>
       
-      <td id="1"><center>60</center></td>
+      <td id="1">60</td>
       <td>100</td>
       <td>Attempted</td>
 
     </tr>
     <tr>
-      <th scope="row">2</th>
+      <th>2</th>
       <
-      <td id="2"><center>49</center></td>
+      <td id="2">49</td>
       <td>100</td>
       <td>Attempted</td>
     </tr>
     <tr>
-      <th scope="row">3</th>
+      <th>3</th>
       <
-      <td id="3"><center>38</center></td>
+      <td id="3">38</td>
       <td>100</td>
       <td>Attempted</td>
     </tr>
     <tr>
-      <th scope="row">4</th>
+      <th>4</th>
       
-      <td id="4"><center>58</center></td>
+      <td id="4">58</td>
       <td>100</td>
       <td>Attempted</td>
     </tr>
     <tr>
-      <th scope="row">5</th>
+      <th>5</th>
       
-      <td id="5"><center>66</center></td>
+      <td id="5">66</td>
       <td>100</td>
       <td>Attempted</td>
     </tr>
     <tr>
-      <th scope="row">6</th>
+      <th>6</th>
      
-      <td id="6"><center>80</center></td>
+      <td id="6">80</td>
       <td>100</td>
       <td>Attempted</td>
     </tr>
     <tr>
-      <th scope="row">7</th>
+      <th>7</th>
     
-      <td id="7"><center>73</center></td>
+      <td id="7">73</td>
       <td>100</td>
       <td>Attempted</td>
     </tr>
     <tr>
-      <th scope="row">8</th>
+      <th>8</th>
       
-      <td id="8"><center>48</center></td>
+      <td id="8">48</td>
       <td>100</td>
       <td>Attempted</td>
     </tr>
     <tr>
-      <th scope="row">9</th>
+      <th>9</th>
      
-      <td id="9"><center>88</center></td>
+      <td id="9">88</td>
       <td>100</td>
       <td>Attempted</td>
     </tr>
     <tr>
-      <th scope="row">10</th>
+      <th>10</th>
       
-      <td id="10"><center>38</center></td>
+      <td id="10">38</td>
       <td>100</td>
       <td>Attempted</td>
     </tr>
@@ -115,27 +112,36 @@
    
   </tbody>
 </table>
-<input type ="button" class="btn" onclick="average()" value="average">
-  
-    <input type="text" id ="avg">
+  Average is :
+	<span id="val"> </span>
+        
+        <script>
+		
+            
+            var table = document.getElementById("table");
+				var avgVal, sumVal = 0, 
+                        rowCount = table.rows.length;// minus the header
+						
+			
+            
+            for(var i = 1; i < 10; i++)
+            {
+			
+				var addme = parseInt(table.rows[i].cells[1].innerHTML)
+				if(!isNaN(addme)) {       
+          sumVal += addme;
+          
+       }
+                
+				
+            }
+            var res=parseInt(sumVal/rowCount);
+			
+			
+            document.getElementById("val").innerHTML = res;
+            
+        </script>
 
-<script>
-  function average(){
-       
-var table = document.getElementById('resulttable'),
-  
-// for each column that must be treated
-for(var i=1; i<table.rows.length; i++){
-  var sum = numOfValues = 0,;
-  // add each row's value
-  for(numOfValues=0, l=rows.length; numOfValues<l; numOfValues++){
-    sum=sum+table.rows[i].cols[2];
-	
-      );
-	  var avg=(sum*100)/10;
-  }
-	getElementById("avg").innerHTML=avg;
-    </script> 
 </div>
  </div>
 </div>
