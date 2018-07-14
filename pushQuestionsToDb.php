@@ -8,8 +8,16 @@
  
 		 if($_FILES["file"]["size"] > 0)
 		 {
+		 }
 		  	$file = fopen($filename, "r");
-	        while (($getData = fgetcsv($file, 10000, ",")) !== FALSE)
+		  	foreach ($CSV as $line ) {
+		  		# code...
+		  
+		  		# code...
+		  	
+	        //while (($getData = fgetcsv($file, 10000, ",")) !== FALSE)
+	        $getData = fgetcsv($file, 10000, ",") !== FALSE; 
+
 	         {
  
  
@@ -29,6 +37,7 @@
 					</script>";
 				}
 	         }
+	     }
 			
 	         fclose($file);	
 		 }
