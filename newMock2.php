@@ -11,10 +11,19 @@
 	}
 		
 	echo "
+<<<<<<< HEAD
 		<html>
 			<head>
 				<title>Mock Test</title>
 				<link rel='stylesheet' href='style1.css'>
+=======
+		<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+			<head>
+				<title>Mock Test</title>
+				<meta charset="utf-8" />
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> </script>
+				<link rel='stylesheet' href='style.css'>
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c
 				<script type='text/javascript'>
 					function Redirect() 
 					{
@@ -26,7 +35,11 @@
 			<body>
 				<div class='main-text'>
 					<!--img src='images/logo.jpg' width='150px' height='100px'-->
+<<<<<<< HEAD
 					MOCK TEST
+=======
+					C-Star
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c
 					<div class='log_btn' id='response'>
 						
 					</div>
@@ -54,6 +67,7 @@
 		{
 			if(isset($_POST['options'])&&$_POST['options']==$_SESSION['answ'])
 				$_SESSION['score']++;
+<<<<<<< HEAD
 
 			// $bool="SELECT bool from results where username='$r'";
 			// $ret1=mysqli_query($conn, $bool);
@@ -67,6 +81,10 @@
 			//{
 			
 			$sql="UPDATE results SET finalresult=".$_SESSION['score']." WHERE username='$r';";
+=======
+			
+			$sql="UPDATE results SET mockresult=".$_SESSION['score']." WHERE username='$r';";
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c
 			$ret=mysqli_query($conn, $sql);
 			//$db->exec($sql);
 			if(!$ret)
@@ -82,7 +100,10 @@
 				";
 			//session_unset(); 
 			//session_destroy(); 
+<<<<<<< HEAD
 			//}
+=======
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c
 		}
 		else if($_SESSION['n']>0)
 		{	
@@ -102,6 +123,23 @@
 		$sql = "SELECT que,opt1,opt2,opt3,opt4,answer from qbank where qno='$id'";
 		//mysql_select_db('cstar');
 		$retval = mysqli_query($conn, $sql);
+<<<<<<< HEAD
+=======
+		<script>
+        $(document).ready(function () {
+                debugger;
+                var u1 = new SpeechSynthesisUtterance(str);
+                u1.lang = 'en-US';
+                u1.pitch = 10;
+                u1.rate = 1;
+                //u1.voice = voices[10];
+                u1.voiceURI = 'native';
+                u1.volume = 10;
+                speechSynthesis.speak($retval);
+
+            });
+    </script>
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c
 		if(! $retval )
 		{
 			die('Could not get data: ');
@@ -137,7 +175,11 @@
 			if($_SESSION['n']==0)
 				echo "<center><input type='submit' name='submit' value='Submit' class='sub_btn1'></center>";
 			else	
+<<<<<<< HEAD
 				echo "<center><input type='submit' name='submit' value='Next' class='sub_btn'></center>";
+=======
+				echo "<center><input type='submit' name='submit' value='Next' class='sub_btn' ></center>";
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c
 		}
 		else 
 		{	
@@ -155,6 +197,10 @@
 				document.getElementById(\"response\").innerHTML=xmlhttp.responseText;
 				if(xmlhttp.responseText=='00:00')
 				{		alert('Thank You participating');
+<<<<<<< HEAD
+=======
+						
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c
 						window.location='ttes.php';
 				}
 			},1000);

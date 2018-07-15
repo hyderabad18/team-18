@@ -28,6 +28,7 @@ function validateForm() {
 
 }
 </script>
+<<<<<<< HEAD
 <?php
 if(empty($_SESSION))
 {
@@ -79,6 +80,9 @@ if(!isset($_SESSION['root']))
 
 <div class="container">
   <h2>Enter details in the  form</h2>
+=======
+</head>
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c
 <form name="jobprof" action="jobinsert.php" onsubmit="return validateForm()" method="POST"  >
 Job Profile:
   <input type="text" name="jobprofile" id="jobprofile" value="">
@@ -117,5 +121,8 @@ Vacancies:
   <br>
   <input type="submit" value="ADD Jobprofile">
   </form>
+<<<<<<< HEAD
   </div>
+=======
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c
   </html>

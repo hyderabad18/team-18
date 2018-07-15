@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <!--  Just an image -->
+=======
+<!-- Just an image -->
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c
 <?php
 if(empty($_SESSION))
 {
@@ -38,8 +42,12 @@ if(!isset($_SESSION['root']))
 		<div class="container">
 	<a class="navbar-brand" href="company.php">
     <img src="logo.png"   height="50px" width="100px" alt="logo here">
+<<<<<<< HEAD
     </a>
   </div>
+=======
+    
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c
 
 	<div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
@@ -50,6 +58,7 @@ if(!isset($_SESSION['root']))
 </nav>
 <br/>
 <br/>
+<<<<<<< HEAD
 <br/>
 <br/>
 <a class="btn btn-success " href="jobform.php">+ADD JOB COMPANY</a>
@@ -57,6 +66,12 @@ if(!isset($_SESSION['root']))
 <?php
 $companyname=$_SESSION['user'];
 // echo $companyname;
+=======
+<a class="btn btn-success " href="jobform.php">+ADD</a>
+
+<?php
+$companyname=$_SESSION['user'];
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c
 require 'config.php';
 
 $sql = "SELECT * FROM jobs where company='$companyname' ";
@@ -81,6 +96,7 @@ $result = mysqli_query($connect, $sql);
       <th scope="col">Actions</th>
     </tr>
   </thead>
+<<<<<<< HEAD
 
   <tbody>
  <?php
@@ -89,6 +105,14 @@ while($row = mysqli_fetch_array($result))
 
   {
 ?>
+=======
+  <tbody>
+    <?php
+ 	$i=1;
+	while($row = mysqli_fetch_array($result))
+  	{
+	?>
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c
   <tr>
   <td> 
       <?php
@@ -96,6 +120,7 @@ while($row = mysqli_fetch_array($result))
        ?>
  </td>
 
+<<<<<<< HEAD
   <td><?php echo "$row[1]";  ?> </td>
 
  <td><?php  echo "$row[2]";  ?> </td>
@@ -118,19 +143,43 @@ while($row = mysqli_fetch_array($result))
 <?php
   }
 ?>
+=======
+  <td><?php echo "$row[0]";  ?> </td>
+
+ <td><?php  echo "$row[1]";  ?> </td>
+ <td><?php  echo "$row[2]";  ?> </td>
+ <td><?php  echo "$row[3]";  ?> </td>
+ <td><?php  echo "$row[4]";  ?> </td>
+
+  <td><div class="btn btn-success">edit</div></td>
+  <td><div class="btn btn-danger">delete</div></td>
+
+
+ </tr>
+
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c
  </tbody>
 </table>
 </div>
 
+<<<<<<< HEAD
 
 
+=======
+<?php
+  }
+?>
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c
 
 </table>
 
 <a class="btn btn-success " href="submit.php">+ADDFILES</a>
 </body>
 </html>
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c

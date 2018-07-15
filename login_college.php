@@ -11,17 +11,27 @@ if(isset($_POST['submit'])){
 	$Password=$_POST['Password'];
 // }
 
+<<<<<<< HEAD
 $query = "SELECT * FROM college WHERE ccname='$Username' and password='$Password' ";
 
 $result=mysqli_query($connect,$query);	
 // echo "in result";
+=======
+$query = "SELECT comname,password FROM college WHERE collname='$Username' and password='$Password' ";
+
+$result=mysqli_query($connect,$query);	
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c
 if(mysqli_num_rows($result))
 {
 	session_start();
 	$_SESSION['root']='true';
 	$getname=$_POST['Username'];
 	$_SESSION['user']=$getname;
+<<<<<<< HEAD
 	header('location:main_college.php');
+=======
+	header('location:college.php');
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c
 }
 else
 {
@@ -34,7 +44,102 @@ else
 <html>
 <head>
 <meta charset="utf-8">
+<<<<<<< HEAD
 <link rel="stylesheet" href="login_style.css">
+=======
+<style>
+body
+{
+	margin: 0;
+	padding: 0;
+	background: url(ba.gif);
+	background-size: cover;
+	font-family: sans-serif;
+}
+.loginbox
+{
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+border-radius: 15px;
+width: 350px;
+height: 480px;
+padding: 80px 40px;
+box-sizing: border-box;
+background: rgba(0,0,0,.5);
+
+}
+.loginbox p
+{
+margin: 0;
+padding: 0;
+font-weight: bold;
+color: #fff;
+}
+.loginbox input
+{
+width: 100%;
+margin-bottom: 20px;
+  }
+.loginbox input[type="text"],
+.loginbox input[type="password"]
+{
+border: none;
+cursor:pointer;
+border-bottom: 1px solid #fff;
+background: transparent;
+outline: none;
+height: 40px;
+color: #fff;
+font-size: 16px;
+}
+::placeholder
+{
+
+color:rgba(255,255,255,.5);
+}
+.loginbox input[type="button"]
+{
+border: none;
+border-bottom: 1px solid blue;
+background: blue;
+outline: none;
+height: 40px;
+color: #fff;
+font-size: 16px;
+cursor: pointer;
+border-radius: 20px;
+}
+
+p
+{
+color: red;
+}
+h1{
+text-align: center;
+color: red;
+margin: 0;
+padding: 0 0 20px;
+}
+a
+{
+text-align: center;
+color: white;
+font-size: 16px;
+}
+.logo
+{
+width: 100px;
+height: 50px;
+border-radius: 50%;
+overflow: hidden;
+position: absolute;
+top: calc(-100px/2);
+left: calc(50% - 50px);
+}
+</style>
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c
 <head>
 <body>
 <div class="loginbox">
@@ -44,7 +149,11 @@ else
 <h1>LOGIN</h1>
 <p>username</p><input type="text" name="Username"  id="Username" placeholder="......" >
 <p>password</p><input type="password" name="Password" id="Password" placeholder="......" ><br><br>
+<<<<<<< HEAD
 <input type="submit" value="login" name='submit' > <br>
+=======
+<input type="submit" value="login" > <br>
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c
 <a href="collegereg.html">SIGN UP!</a>
 </form>
 

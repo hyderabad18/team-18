@@ -113,16 +113,33 @@ alert("Please select an education");
 <form name="registration" action="registration.php" onsubmit="return validateForm()" method="POST"  >
 <div class="col-sm-6">User Name:</div>
   <input type="text" name="student" id="student" value="">
+<<<<<<< HEAD
+=======
   <br>
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c
   <br>
 <div class="col-sm-6">Age:</div>
   <input type="text" name="age" id="age" value="">
   <br>
+<<<<<<< HEAD
+<div class="col-sm-6">Age:</div>
+  <input type="text" name="age" id="age" value="">
+=======
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c
   <br>
  <div class="col-sm-6"> Phone NO:</div>
   <input type="text" name="phone" id="phone" value="">
   <br>
+<<<<<<< HEAD
+ <div class="col-sm-6"> Phone NO:</div>
+  <input type="text" name="phone" id="phone" value="">
+=======
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c
   <br>
+ <div class="col-sm-6">Email Id:</div>
+  <input type="Email" name="studentemail" id="studentemail" value="">
+  <br>
+<<<<<<< HEAD
  <div class="col-sm-6">Email Id:</div>
   <input type="Email" name="studentemail" id="studentemail" value="">
   <br>
@@ -154,6 +171,36 @@ $result1 = mysqli_query($connect, $query);?>
 </select>
   <br>
   <br>
+=======
+  <br>
+  <div class="col-sm-6">University Name:</div>
+  <?php
+  // require 'config.php';
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "cfgteam18";
+
+// Create connection
+$connect = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$connect) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+  $query = "SELECT colname FROM college";
+$result1 = mysqli_query($connect, $query);?>
+  <select name="college" id="college" >
+            <?php while($row1 = mysqli_fetch_array($result1)):;?>
+
+            <option value="<?php echo $row1[0];?>"><?php echo $row1[0];?></option>
+
+            <?php endwhile;?>
+
+        </select>
+</select>
+  <br>
+  <br>
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c
   <div class="col-sm-6">Present Education:</div>
   <select name="education" id="education">
   <option value="btech">B.Tech</option>
@@ -168,7 +215,10 @@ $result1 = mysqli_query($connect, $query);?>
   <br>
  <div class="col-sm-6"> Passed Out:</div>
   <input type="text" name="passout" id="passout" value="">
+<<<<<<< HEAD
   <br>
+=======
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c
   <br>
   <div class="col-sm-6">Disabilities:</div>
   <input type="checkbox"  name="disabilities[]" value="blind" /> Blind <br />
@@ -180,10 +230,28 @@ $result1 = mysqli_query($connect, $query);?>
   <div class="col-sm-6">Refer Colleges:</div>
   <input type="text" name="refercol" id="refercol" value="">
   <br>
+<<<<<<< HEAD
+=======
+  <div class="col-sm-6">Disabilities:</div>
+  <input type="checkbox"  name="disabilities[]" value="blind" /> Blind <br />
+	<input type="checkbox" name="disabilities[]" value="deaf" /> Deaf<br />
+	<input type="checkbox" name="disabilities[]" value="dumb" /> Dumb<br/>
+	<input type="checkbox" name="disabilities[]" value="handikapped" />Handikapped<br/>
+	<br>
+	<br>
+  <div class="col-sm-6">Refer Colleges:</div>
+  <input type="text" name="refercol" id="refercol" value="">
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c
   <br>
   <div class="col-sm-6">Password:</div>
   <input type="password" name="password" id="password" value="">
   <br>
+<<<<<<< HEAD
+=======
+  <div class="col-sm-6">Password:</div>
+  <input type="password" name="password" id="password" value="">
+  <br>
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c
   <br>
   <div class="col-sm-6">Confirm Password:</div>
   <input type="password" name="confirmpassword" id="confirmpassword" value="">
@@ -191,7 +259,11 @@ $result1 = mysqli_query($connect, $query);?>
   <br>
   <input type="submit" value="Signup">
 </form> 
+<<<<<<< HEAD
 </div>
+=======
+
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c
 </body>
 </html>
 

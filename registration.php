@@ -23,8 +23,12 @@ VALUES ('$_POST[student]','$_POST[age]','$_POST[studentemail]','$_POST[college]'
  
 
 if (mysqli_query($conn, $sql)) {
+<<<<<<< HEAD
     // echo "New record created successfully";
     header('location:login_student.php')
+=======
+    echo "New record created successfully";
+>>>>>>> 3209c97bfc91bea898a2d7978e563849df7e1f8c
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
