@@ -43,8 +43,66 @@ if($res) {
 <head>
 	<title></title>
 </head>
+<script>
+function validateForm() {
+    var x = document.forms["companyreg"]["comname"].value;
+    if (x == "") {
+        alert("Company name must be filled out");
+    else
+    	$comname=x;
+       
+    }
+    
+    var x = document.forms["companyreg"]["name"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+    else 
+    	$name=x; 
+    }
+    
+    var x = document.forms["companyreg"]["email"].value;
+    if (x == "") {
+        alert("Email Id must be filled out");        
+    }
+    else if(x.length<10)
+    {
+    	 alert("Provide proper email id");
+    	
+    }
+     else
+    	$email=x;
+  
+   
+    var x = document.forms["companyreg"]["password"].value;
+    if (x == "") {
+        alert("Password must be filled out");
+        
+    }
+    else if(x.length<6 || x.length>10)
+    {
+    	 alert("Password must consists of 6 to 10 letters");
+    	 
+    }
+    else
+    	$password=x;
+    var x = document.forms["companyreg"]["confirmpassword"].value;
+    if (x == "") {
+        alert("Confirm Password must be filled out");
+        
+    }
+    if (document.getElementById('password').value !=
+    document.getElementById('confirmpassword').value)
+    {
+    	alert("Password and confirm password must match");
+    	return false;
+    }
+    return true;
+
+}
+</script>
+
 <body>
-	<form method="POST">
+	<form  name="companyreg" action="connect1.php" onsubmit="return validateForm()" method="POST">
 		company name:<input type="text" name="comname" id="comname"> <br>
 		coordinator name:<input type="text" name="name" id="name"> <br>
 		phone:<input type="text" name="phone" id="phone"> <br>

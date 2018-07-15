@@ -11,9 +11,11 @@
 	}
 		
 	echo "
-		<html>
+		<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 			<head>
 				<title>Mock Test</title>
+				<meta charset="utf-8" />
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> </script>
 				<link rel='stylesheet' href='style.css'>
 				<script type='text/javascript'>
 					function Redirect() 
@@ -90,6 +92,20 @@
 		$sql = "SELECT que,opt1,opt2,opt3,opt4,answer from qbank where qno='$id'";
 		//mysql_select_db('cstar');
 		$retval = mysqli_query($conn, $sql);
+		<script>
+        $(document).ready(function () {
+                debugger;
+                var u1 = new SpeechSynthesisUtterance(str);
+                u1.lang = 'en-US';
+                u1.pitch = 10;
+                u1.rate = 1;
+                //u1.voice = voices[10];
+                u1.voiceURI = 'native';
+                u1.volume = 10;
+                speechSynthesis.speak($retval);
+
+            });
+    </script>
 		if(! $retval )
 		{
 			die('Could not get data: ');
@@ -125,7 +141,7 @@
 			if($_SESSION['n']==0)
 				echo "<center><input type='submit' name='submit' value='Submit' class='sub_btn1'></center>";
 			else	
-				echo "<center><input type='submit' name='submit' value='Next' class='sub_btn'></center>";
+				echo "<center><input type='submit' name='submit' value='Next' class='sub_btn' ></center>";
 		}
 		else 
 		{	
@@ -143,6 +159,7 @@
 				document.getElementById(\"response\").innerHTML=xmlhttp.responseText;
 				if(xmlhttp.responseText=='00:00')
 				{		alert('Thank You participating');
+						
 						window.location='ttes.php';
 				}
 			},1000);
