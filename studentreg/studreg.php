@@ -50,7 +50,7 @@ if(strUser=="")
 {
 alert("Please select a college");
 }
-     var x = document.getElementById("education1");
+     var x = document.getElementById("education");
 var strUser = x.options[x.selectedIndex].value;
 if(strUser=="")
 {
@@ -81,13 +81,16 @@ alert("Please select an education");
     	return false;
     }
     return true;
-
 }
 </script>
-<meta charset="utf-8">
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title> Registration  </title>
+        <title> Login  </title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -95,13 +98,14 @@ alert("Please select an education");
         
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <link rel="stylesheet" href="registrationstyle.css">
+        <link rel="stylesheet" href="regstyle.css">
 </head>
 <body>
+
 <div class="col-sm-5 form-box">
  <div class="form-top">
 <div class="form-top-left">
-<h1><strong>Student Registration </strong></h1>
+<h1><strong>Registeration </strong></h1>
                                 
 </div>
 <div class="form-top-right">
@@ -109,53 +113,32 @@ alert("Please select an education");
   </div>
 </div>
 <div class="form-bottom">
-
 <form name="registration" action="registration.php" onsubmit="return validateForm()" method="POST"  >
-<div class="col-sm-6">User Name:</div>
+User Name:
   <input type="text" name="student" id="student" value="">
   <br>
   <br>
-<div class="col-sm-6">Age:</div>
+Age:
   <input type="text" name="age" id="age" value="">
   <br>
   <br>
- <div class="col-sm-6"> Phone NO:</div>
-  <input type="text" name="phone" id="phone" value="">
-  <br>
-  <br>
- <div class="col-sm-6">Email Id:</div>
+ Email Id:
   <input type="Email" name="studentemail" id="studentemail" value="">
   <br>
   <br>
-  <div class="col-sm-6">University Name:</div>
-  <?php
-  // require 'config.php';
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "cfgteam18";
-
-// Create connection
-$connect = mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
-if (!$connect) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-  $query = "SELECT colname FROM college";
-$result1 = mysqli_query($connect, $query);?>
-  <select name="college" id="college" >
-            <?php while($row1 = mysqli_fetch_array($result1)):;?>
-
-            <option value="<?php echo $row1[0];?>"><?php echo $row1[0];?></option>
-
-            <?php endwhile;?>
-
-        </select>
+  University Name:
+  <select id="college">
+  <option value="gnits">G.Narayanamma Institute of Technology and Science</option>
+  <option value="cbit">Chaitanya bharathi institute of technology</option>
+  <option value="vnr">VNR VJIET</option>
+  <option value="griet">GRIET</option>
+  <option value="mallareddy">Mallareddy</option>
+  <option value="other">Other</option>
 </select>
   <br>
   <br>
-  <div class="col-sm-6">Present Education:</div>
-  <select name="education" id="education">
+  Present Education:
+  <select id="education">
   <option value="btech">B.Tech</option>
   <option value="be">BE</option>
   <option value="mtech">M.Tech</option>
@@ -166,32 +149,29 @@ $result1 = mysqli_query($connect, $query);?>
 </select>
   <br>
   <br>
- <div class="col-sm-6"> Passed Out:</div>
+  Passed Out:
   <input type="text" name="passout" id="passout" value="">
   <br>
   <br>
-  <div class="col-sm-6">Disabilities:</div>
-  <input type="checkbox"  name="disabilities[]" value="blind" /> Blind <br />
-	<input type="checkbox" name="disabilities[]" value="deaf" /> Deaf<br />
-	<input type="checkbox" name="disabilities[]" value="dumb" /> Dumb<br/>
-	<input type="checkbox" name="disabilities[]" value="handikapped" />Handikapped<br/>
-	<br>
-	<br>
-  <div class="col-sm-6">Refer Colleges:</div>
+  Refer Colleges:
   <input type="text" name="refercol" id="refercol" value="">
   <br>
   <br>
-  <div class="col-sm-6">Password:</div>
+  Password:
   <input type="password" name="password" id="password" value="">
   <br>
   <br>
-  <div class="col-sm-6">Confirm Password:</div>
+  Confirm Password:
   <input type="password" name="confirmpassword" id="confirmpassword" value="">
   <br>
   <br>
-  <input type="submit" value="Signup">
-</form> 
-</div>
+  <button type="submit" class="btn">Sign me up!</button>
+  
+  </div>
+
+ </form>
+ </div>
+
+
 </body>
 </html>
-

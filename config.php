@@ -1,17 +1,11 @@
-<php
-$servername = "localhost";
-$username = "root";
-$password = "root";
- 
-try {
-   
-    $conn = mysqli_connect($servername, $username, $password);
-     //echo "Connected successfully"; 
-    }
-catch(exception $e)
-    {
-    echo "Connection failed: " . $e->getMessage();
-    }
-    return $conn;
-
+<?php
+$db_name="cfgteam18";
+$username="root";
+$password="";
+$server="localhost";
+$connect=mysqli_connect($server,$username,$password,$db_name);
+// if($connect)
+// 	echo"CONNECTION SUCCESSFUL";
+// else
+// 	echo"CONNECTION NOT SUCCESSFUL";
 ?>

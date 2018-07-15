@@ -1,41 +1,140 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<title>college reg form</title>
 </head>
-<div style="background-color:#4d4dff;color:white;padding:20px;">
+<link rel="stylesheet" href="registrationstyle.css">
+<script>
+function validateForm() {
+    var x = document.forms["colreg"]["colname"].value;
+    if (x == "") {
+        alert("Collegename must be filled out");
+        return false;
+    }
+    else if(x.length>40)
+    {
+    	 alert("Collegename is too long");
+    	 return false;
+    }
+    var x = document.forms["colreg"]["ccname"].value;
+    if (x == "") {
+        alert("coordinator name must be filled out");
+        return false;
+    }
+    var x = document.forms["colreg"]["email"].value;
+    if (x == "") {
+        alert("Email Id must be filled out");
+        return false;
+    }
+    else if(x.length<10)
+    {
+    	 alert("Provide proper email id");
+    	 return false;
+    }
+    var x = document.forms["colreg"]["phone"].value;
+    if (x == "") {
+        alert("phone no. must be filled out");
+		return false;
+		}
+	else if(x.length>10)
+	{
+	alert("enter valid phone number");
+       
+        return false;
+		}
+	 var x = document.forms["colreg"]["caddress"].value;
+    if (x == "") {
+        alert("Address must be filled out");
+       
+        return false;
+    }
+     
+    var x = document.forms["colreg"]["password"].value;
+    if (x == "") {
+        alert("Password must be filled out");
+        
+        return false;
+    }
+    else if(x.length<6 || x.length>10)
+    {
+    	 alert("Password must consists of 6 to 10 letters");
 
-	<h2>Company registration form </h2>
+    	 return false;
+    }
+    var x = document.forms["colreg"]["confirmpassword"].value;
+    if (x == "") {
+        alert("Confirm Password must be filled out");
+        
+        return false;
+    }
+    if (document.getElementById('cpassword').value !=
+    document.getElementById('confirmpassword').value)
+    {
+    	alert("Password and confirm password must match");
+    	return false;
+    }
+    
+
+return true;
+}
+</script>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Registration  </title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="registrationstyle.css">
+</head>
+<body>
+
+<div class="col-sm-5 form-box">
+ <div class="form-top">
+<div class="form-top-left">
+<h1><strong>College Registration </strong></h1>
+                                
 </div>
-<br>
-<br>
-<body style="text-align:center;background-image:url('g.jpg');font-size:20px">
-	College Name:
-	 <input type="text" name="colname" ><br>
-	 <br>
-	 <br>
-	Coordinator name:
-	 <input type="text" name ="ccname" ><br>
-	 <br>
-	 <br>
-	phone:
-	 <input type="text" name ="phone" ><br>
-	 <br>
-	 <br>
-	Email id: 
-	 <input type="text" name ="email" ><br>
-	 <br>
-	 <br>
-	Address:
-	 <input type="text" name="address" ><br>
-	 <br>
-	 <br>
-	Password:
-	 <input type="text" name="password" ><br>
-	 <br>
-	 <br>
-	
-	 <input type="submit" name="submit" value="submit">
+<div class="form-top-right">
+ <i class="fa fa-pencil"></i>
+  </div>
+</div>
+<div class="form-bottom">
 
+<body>
+    <!-- <div /> -->
+       
+    <form  name="companyreg" action="college.php" onsubmit="return validateForm()" method="POST">
+         <div class="col-sm-6">College Name:</div><input type="text" name="colname" id="colname" > <br>
+        <br>
+        
+        <div class="col-sm-6">Coordinator name:</div><input type="text" name ="ccname" class="defaultTextBox advancedSearchTextBox"  id ="ccname"><br>
+        <br>
+        
+        <div class="col-sm-6">phone:</div> <input type="text" name ="phone" id ="phone" class="defaultTextBox advancedSearchTextBox"><br>
+        <br>
+        
+        <div class="col-sm-6">email: </div><input type="text" name="email" class="defaultTextBox advancedSearchTextBox" id="email"> <br>
+        <br>
+        
+        <div class="col-sm-6">address:</div> <input type="text" name="address" class="defaultTextBox advancedSearchTextBox"  id="address"> <br>
+        <br>
+        
+        <div class="col-sm-6">password:</div> <input type="password" name="password" class="defaultTextBox advancedSearchTextBox" id="password"> <br>
+        <br>
+        
+        <div class="col-sm-6">confirm password:</div> <input type="password" class="defaultTextBox advancedSearchTextBox"  name="confirm password" id="confirm password"> <br>
+        <br>
+        
+       
+         <button type="submit" class="btn">Sign me up!</button>
+
+    </form>
+<!-- </div> -->
 </body>
-
 </html>

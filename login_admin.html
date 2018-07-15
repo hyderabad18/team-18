@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="login_style.css">
+<script type="text/javascript">
+	function check(Username,Password){
+		if(Username=='admin' && Password=='admin'){
+				return true;
+		}
+	}
+
+</script>
+<head>
+<body>
+<div class="loginbox">
+
+<img src="logo.png" height="100" width="100" class="logo">
+<form method="post" action="admin.php" onsubmit="return check(Username,Password)">
+<h1>LOGIN</h1>
+<p>username</p><input type="text" name="Username"  id="Username" placeholder="......" >
+<p>password</p><input type="password" name="Password" id="Password" placeholder="......" ><br><br>
+<input type="submit" value="login" /> <br>
+
+</form>
+
+</div>
+</body>
+</html>
