@@ -4,10 +4,9 @@
     <meta charset="utf-8" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> </script>
     <script>
-        $(document).ready(function () {
-            $("#startBtn").on('click', function (e) {
+        function ttos(str) {
                 debugger;
-                var u1 = new SpeechSynthesisUtterance('Hello Word..');
+                var u1 = new SpeechSynthesisUtterance(str);
                 u1.lang = 'en-US';
                 u1.pitch = 10;
                 u1.rate = 1;
@@ -15,13 +14,10 @@
                 u1.voiceURI = 'native';
                 u1.volume = 10;
                 speechSynthesis.speak(u1);
-
-            });
+				return true;
         });
     </script>
     <title> </title>
 </head>
-<body>
-    <input type="button" id="startBtn" value="Hello Word.." />
-</body>
+
 </html>
